@@ -11,6 +11,9 @@
     authors = shortlog -s -n
     close = merge --no-ff
     subup = submodule update --init --recursive
+    del = branch -D
+    ph = push origin HEAD
+    bl = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
 [filter "lfs"]
     required = true
     clean = git-lfs clean -- %f
