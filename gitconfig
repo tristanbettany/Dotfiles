@@ -1,0 +1,18 @@
+[fetch]
+    prune = true
+[alias]
+    st = status
+    lg = log --graph --decorate --branches --oneline --remotes --tags --all --color
+    co = checkout
+    rebase = rebase -p
+    ff = merge --ff-only
+    cp = cherry-pick
+    yoink = cherry-pick
+    authors = shortlog -s -n
+    close = merge --no-ff
+    subup = submodule update --init --recursive
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
