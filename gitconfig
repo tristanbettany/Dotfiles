@@ -4,6 +4,7 @@
     st = status
     lg = log --graph --decorate --branches --oneline --remotes --tags --all --color
     co = checkout
+    cm = commit -m
     rebase = rebase -p
     ff = merge --ff-only
     cp = cherry-pick
@@ -14,6 +15,10 @@
     del = branch -D
     ph = push origin HEAD
     bl = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+    last = log -1 HEAD --stat
+    rv = remote -v
+    se = !git log --all --oneline --decorate --color | grep -F
+    al = add .
 [filter "lfs"]
     required = true
     clean = git-lfs clean -- %f
